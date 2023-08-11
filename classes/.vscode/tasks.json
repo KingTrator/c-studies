@@ -3,9 +3,30 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "Build with GCC lastest version 07/2023",
+			"label": "C/C++: cl.exe build active file",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"${file}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": "build",
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe build active file",
 			"command": "C:\\Program Files (x86)\\mingw64\\bin\\g++.exe",
 			"args": [
+				"-fdiagnostics-color=always",
 				"-g",
 				"-std=c++20",
 				"${file}",
@@ -19,7 +40,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compiler: \"C:\\Program Files (x86)\\c++\\mingw64\\bin\\g++.exe\""
+			"detail": "compiler: \"C:\\Program Files (x86)\\mingw64\\bin\\g++.exe\""
 		}
 	]
 }

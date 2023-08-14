@@ -3,35 +3,14 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: cl.exe build active file",
-			"command": "cl.exe",
-			"args": [
-				"/Zi",
-				"/EHsc",
-				"/nologo",
-				"/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-				"${file}"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$msCompile"
-			],
-			"group": "build",
-			"detail": "compiler: cl.exe"
-		},
-		{
-			"type": "cppbuild",
 			"label": "C/C++: g++.exe build active file",
 			"command": "C:\\Program Files (x86)\\mingw64\\bin\\g++.exe",
 			"args": [
-				"-fdiagnostics-color=always",
 				"-g",
 				"-std=c++20",
-				"${file}",
+				"${workspaceFolder}\\*.cpp",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}\\rooster.exe"
 			],
 			"options": {
 				"cwd": "${fileDirname}"

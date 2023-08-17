@@ -1,0 +1,1 @@
+I already wrote comments in the previous code, so I'll just skip this class.

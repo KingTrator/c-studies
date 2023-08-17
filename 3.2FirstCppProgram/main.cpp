@@ -4,6 +4,7 @@ int main(){ // The main function, that's where the code starts.
     std::cout << "Number1" << std::endl;
     std::cout << "Number2" << std::endl;
     std::cout << "Number3" << std::endl; 
+    std::cout << "Hello, World!" << std::endl;
 }
 
 /* std and endl are provided by the iostream library. */

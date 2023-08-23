@@ -1,6 +1,9 @@
 {
     "files.associations": {
+        "string": "cpp",
+        "xstring": "cpp",
         "iostream": "cpp",
+        "algorithm": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
         "cctype": "cpp",
@@ -28,12 +31,12 @@
         "memory": "cpp",
         "mutex": "cpp",
         "new": "cpp",
+        "optional": "cpp",
         "ostream": "cpp",
         "ratio": "cpp",
         "stdexcept": "cpp",
         "stop_token": "cpp",
         "streambuf": "cpp",
-        "string": "cpp",
         "system_error": "cpp",
         "thread": "cpp",
         "tuple": "cpp",
@@ -51,10 +54,7 @@
         "xloctime": "cpp",
         "xmemory": "cpp",
         "xstddef": "cpp",
-        "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp",
-        "algorithm": "cpp",
-        "optional": "cpp"
+        "xutility": "cpp"
     }
 }

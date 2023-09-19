@@ -1,0 +1,7 @@
+Pelo visto, não tenho o std::wformat, o que torna esse exercício inútil, por enquanto.
+Para piorar, o compilador não está exibindo os outputs de "wcout" após o primeiro.
+Isso é por conta justamente do primeiro.
+O ChatGPT realmente não presta para resolver esse tipo de coisa, cada vez é uma solução
+mais complexa que a última. Não vale a pena investir tempo nisso, vou deixar para resolver
+questões usando UTF-8 quando estiver mais maduro em C++ e capaz de implementar
+a lógica de uso UTF-8 por conta.

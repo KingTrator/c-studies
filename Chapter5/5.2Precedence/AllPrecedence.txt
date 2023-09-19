@@ -1,0 +1,47 @@
+1.Postfix : (), [], ->, . , ++, -- Left-to-right (LR)
+2.Unary : ++, --, +, -, !, ~, (type), *, &, sizeof Right-to-left (RL)
+3.Multiplicative : *, /, % Left-to-right (LR)
+4.Additive : +, - Left-to-right (LR)
+5.Shift : <<, >> Left-to-right (LR)
+6.Relational : <, <=, >, >= Left-to-right (LR)
+7.Equality : ==, != Left-to-right (LR)
+8.Bitwise AND : & Left-to-right (LR)
+9.Bitwise XOR : ^ Left-to-right (LR)
+10.Bitwise OR : | Left-to-right (LR)
+11.Logical AND : && Left-to-right (LR)
+12. Logical OR : || Left-to-right (LR)
+13. Conditional : ? : Right-to-left (RL)
+14. Assignment : =, +=, -=, *=, /=, %=, <<=, >>=, &=, ^=, |= Right-to-left (RL)
+15. Comma : , Left-to-right (LR)
+
+Small situation to understand the relevance of that all: 
+" sizeof (int) * p" is interpreted as: 
+'(sizeof(int)) * p" and not "sizeof ((int) * p)', which may be the intention".
+
+What's LR and RL?
+Refers to the type of Associativity. 
+Look the examples to understand it:
+"+, -" are LR.
+So, in the expression "a - b + c - d - e + h", "a-b = x" happens.Then
+"x + c = x'", so "x' - d = x'' ", and "x'' - e= x''' ", finally "x''' + h = y".
+In this case, because we're making a math operation, it really doesn't matter the order.
+But LR may have implications when we're combining types of operators at C++.
+In the other hand, RL:
+"++a" is a RL. So, in the case:
+"b * ++a", first we have an increment of a (a = a + 1), then we multiply it with "b".
+OBS: "++" and "--" as unary operators have only one step "increment and return".
+You may get confused with postfix "++" and "--" once they've two steps:
+"return then increment". In their case, firstly they return. And then, after all the line
+is compiled and execute, they increment (in other words, the increment is the last thing
+to be done, doesn't matter the order you put them in the code).
+
+But in general terms, you can understand LR and RL like this:
+When compiler encounters a "LR", he will look to everything at its LEFT. If 
+he find anything of same preceden or lower preceden, this "LR" is execute first.
+And if the compiler finds something with higher precedence?
+Then, depends. If that something is "LR", it will not interfere. The first "LR"
+will be executed first, because once the higher precedence "LR" is found,
+the compiler looks to what is on its LEFT, not on its right.
+BUT! If the higher precedence is a "RL", then it will be executed first, because
+the compiler checks to its RIGHT.
+

@@ -1,0 +1,8 @@
+1. () Parenthesis (not a precedence operator, but I must show it)
+2. * Multiply
+3. / Division
+4. % Module
+5. + Addition
+6. - Subtraction
+I feel dumb exposing this, but whatever.
+Look "AllPrecedence" for completeness.

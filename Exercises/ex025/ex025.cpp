@@ -39,6 +39,14 @@ bool setUTF8Locale() {
     #endif
 }
 
+// Exercise
+/*
+    Medium: Currency Converter
+
+1.  Prompt the user to enter an amount in USD.
+2.  Convert this amount to EUR, GBP, and JPY. (You can choose the values for each one)
+3.  Display the original amount and the converted amounts in a table format. Use fixed, setprecision(2), and right to format the currency values.
+*/
 
 int main(){
     if (setUTF8Locale()){
@@ -46,8 +54,27 @@ int main(){
     } else {
         std::wcout << L"Failed to set UTF-8 locale " << std::endl;
     }
+    int metric {10};
+    float value {};
 
-    std::cout << "Hello World!" << std::endl;
-    std::cout << "I do accept UTF-8 variants: áéíóú ã ~~ lçç*&¨%$#@@!!#``" << std::endl;
+    std::cout << "Hello! This is the Currency Converter. Type an USD value, I'll convert it to EUR, GBP and JPY" << std::endl;
+    std::cin >> value;
+    std::cin.ignore();
+    std::cout << std::endl;
+
+    std::cout << "ALRIGHT, LET'S GET THIS SHOW STARTED!" << std::endl;
+    std::cout << std::endl;
+
+    /* Currently:
+    1 USD = 0,94 EUR; 0,81 GBP; 147,73 JPY
+    */
+
+    std::cout << std::setw(20) << "Values" << std::endl;
+    std::cout << std::right << std::fixed << std::setprecision(2);
+    std::cout << "USD" << std::setw(metric) << "EUR" << std::setw(metric) <<
+                 "GBP" << std::setw(metric) << "JPY" << std::endl;
+    std::cout << value << std::setw(metric) << value * 0.94 << std::setw(metric) <<
+                 value * 0.81  << std::setw(metric) << value * 147.73 << std::endl;
+
     return 0;
 }

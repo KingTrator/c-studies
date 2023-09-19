@@ -2,7 +2,10 @@
 #include <clocale>
 #include <locale>
 #include <codecvt>
-#include <iomanip>
+#include <format>
+#include <string>
+
+// This code is not working. I have no idea why.
 
 // I'll have to learn better this function ChatGPT provide to always set utf-8 as main codification. For now, I'll let it like that.
 #if defined(_WIN32) || defined(_WIN64)
@@ -46,8 +49,46 @@ int main(){
     } else {
         std::wcout << L"Failed to set UTF-8 locale " << std::endl;
     }
+    std::wcout << std::flush;
+    std::wcout.flush();
+    std::wcout << L"Is this working? " << std::endl;
 
-    std::cout << "Hello World!" << std::endl;
-    std::cout << "I do accept UTF-8 variants: áéíóú ã ~~ lçç*&¨%$#@@!!#``" << std::endl;
+/*
+
+    std::wstring name{};
+    std::wstring lname{};
+    int age{};
+    bool student{};
+    int metric {20};
+
+    std::wcout << L"Type your first name: ";
+    std::wcin >> name;
+    std::wcin.ignore();
+    std::wcout << std::endl;
+
+    std::wcout << L"Ok! Type your last name: ";
+    std::wcin >> lname;
+    std::wcin.ignore();
+    std::wcout << std::endl;
+
+    std::wcout << L"Age: " << std::endl;
+    std::wcin >> age;
+    std::wcin.ignore();
+    std::wcout << std::endl;
+
+    std::wcout << L"Type 1 if you're a student, 0 if you're not: ";
+    std::wcout << std::flush;
+    std::wcin >> student;
+    std::wcin.ignore();
+    std::wcout << std::endl;
+
+    std::wcout << std::boolalpha << std::left << std::endl;
+
+    std::wcout << L"-------------------------------" << std::endl;
+
+*/
     return 0;
 }
+
+// OBS: "wcout" is cout for UTF-8, w = wide.
+// While you're using "wide" types, everything must be "wide", like "wstring" instead of just "string".

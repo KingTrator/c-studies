@@ -1,0 +1,39 @@
+I'm not writting a code for this lecture, because great part of it demands commands
+that I haven't learn yet, as you can see below.
+
+Note: Variable Life Time is the time that a variable is alive. Storage Duration is
+the set of rules that governs the Life Time of a variable.
+
+1. Local Storage Duration: Function's variables only exists during the
+time the function is been executed. After the block reach its end, the variable
+will be wiped out of the memory. 
+void example {
+	int answer_is {42}; // only exists while the function is been executed.
+// IMPORTANT
+// This variables are declared inside of a function or block and they have no special prefix
+}
+
+2. Static Storage Duration: The variable exists while the programm is running.
+// IMPORTANT
+// This variables use the prefix "static", example:
+static int staticVariable {42};
+// They can be inside or outside a function.
+
+3. Dynamic Storage Duration: The lifetime is manually controlled by the devoloper.
+// SUPER IMPORTANT
+// These variables are allocated inside "heap", which is a memory space 
+// destined to be used by dynamic allocation. 
+// The devoloper MUST declare space there and MUST delete the space after the use.
+// IMPORTANT
+// Example:
+int* answer {new int}; //declares an int type called "answer", "*" points to a pointer and new is the
+// prefix to command heap use.
+*answer {42}; // initialize the heap's variable.
+delete answer; //deletes it.
+//If you don't delete it, the programm may crash after a few loops. 
+
+
+RESUME:
+1. Local (the usual variables)
+2. Static (Stars and ends with the programm)
+3. Dynamic (The programmer deals with the heap memory to create and delete space there)
